@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import HealthKit
 
 class DetailFoodVC: UIViewController {
 
@@ -23,12 +24,15 @@ class DetailFoodVC: UIViewController {
     
     var nutriScorePoint: Int!
     var foodName: String!
-    var energy, sugar, sfa, sodium, fruit, fiber, protein: Int!
+    var energy, sodium, fruit: Int!
+    var sugar, sfa, fiber, protein: Double!
+    
+    var healthStore: HKHealthStore?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        requestPermitionHealthKit()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +46,115 @@ class DetailFoodVC: UIViewController {
         proteinLabel.text = ": \(String(protein)) gram"
         
         getLabelNutriSocre()
+    }
+    
+    func requestPermitionHealthKit(){
+        healthStore = HKHealthStore()
+        
+        let requestType = Set([HKObjectType.quantityType(forIdentifier: .dietaryEnergyConsumed)!,
+                               HKObjectType.quantityType(forIdentifier: .dietarySugar)!,
+                               HKObjectType.quantityType(forIdentifier: .dietaryFatSaturated)!,
+                               HKObjectType.quantityType(forIdentifier: .dietarySodium)!,
+                               HKObjectType.quantityType(forIdentifier: .dietaryFiber)!,
+                               HKObjectType.quantityType(forIdentifier: .dietaryProtein)!])
+        
+        healthStore?.requestAuthorization(toShare: requestType, read: requestType, completion: { (inAuthorized, error) in
+            if inAuthorized {
+                print("You're in authorize")
+            } else {
+                fatalError("Fatal error is not Authorized")
+            }
+        })
+    }
+
+    
+    @IBAction func addNutritionDataToHealthData(_ sender: UIButton) {
+        saveDietaryEnergy(energyValue: energy)
+        saveDietarySugar(sugarValue: sugar)
+        saveDietaryFatSaturated(fatValue: sfa)
+        saveDietarySodium(sodiumValue: sodium)
+        saveDietaryFiber(fiberValue: fiber)
+        saveDietaryProtein(proteinValue: protein)
+        
+        let alert = UIAlertController(title: "Success", message: "Nutrition data has been saved to health data", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func saveDietaryEnergy(energyValue: Int) {
+        guard let energyType = HKSampleType.quantityType(forIdentifier: .dietaryEnergyConsumed) else { return }
+        let unit = HKUnit.kilocalorie()
+        let quantity = HKQuantity(unit: unit, doubleValue: Double(energyValue))
+        let today = Date()
+        
+        let energyQuantitySample = HKQuantitySample(type: energyType, quantity: quantity, start: today, end: today)
+        healthStore?.save(energyQuantitySample, withCompletion: { (success, error) in
+            print("Energy data has been saved")
+        })
+    }
+    
+    func saveDietarySugar(sugarValue: Double) {
+        guard let sugarType = HKSampleType.quantityType(forIdentifier: .dietarySugar) else { return }
+        let unit = HKUnit.gram()
+        let quantity = HKQuantity(unit: unit, doubleValue: sugarValue)
+        let today = Date()
+        
+        let sugarQuantitySample = HKQuantitySample(type: sugarType, quantity: quantity, start: today, end: today)
+        healthStore?.save(sugarQuantitySample, withCompletion: { (success, error) in
+            print("Sugar data has been saved")
+        })
+    }
+    
+    func saveDietaryFatSaturated(fatValue: Double) {
+        guard let fatSaturatedType = HKSampleType.quantityType(forIdentifier: .dietaryFatSaturated) else { return }
+        let unit = HKUnit.gram()
+        let quantity = HKQuantity(unit: unit, doubleValue: fatValue)
+        let today = Date()
+        
+        let fatSaturatedQuantitySample = HKQuantitySample(type: fatSaturatedType, quantity: quantity, start: today, end: today)
+        healthStore?.save(fatSaturatedQuantitySample, withCompletion: { (success, error) in
+            print("Fat saturated data has been saved")
+        })
+    }
+    
+    func saveDietarySodium(sodiumValue: Int) {
+        guard let sodiumType = HKSampleType.quantityType(forIdentifier: .dietarySodium) else { return }
+        let unit = HKUnit.gramUnit(with: .milli)
+        let quantity = HKQuantity(unit: unit, doubleValue: Double(sodiumValue))
+        let today = Date()
+        
+        let sodiumQuantitySample = HKQuantitySample(type: sodiumType, quantity: quantity, start: today, end: today)
+        healthStore?.save(sodiumQuantitySample, withCompletion: { (success, error) in
+            print("Sodium data has been saved")
+        })
+    }
+    
+    func saveDietaryFiber(fiberValue: Double) {
+        guard let fiberType = HKSampleType.quantityType(forIdentifier: .dietaryFiber) else { return }
+        let unit = HKUnit.gram()
+        let quantity = HKQuantity(unit: unit, doubleValue: fiberValue)
+        let today = Date()
+        
+        let fiberQuantitySample = HKQuantitySample(type: fiberType, quantity: quantity, start: today, end: today)
+        healthStore?.save(fiberQuantitySample, withCompletion: { (success, error) in
+            print("Fiber data has been saved")
+        })
+    }
+    
+    func saveDietaryProtein(proteinValue: Double) {
+        guard let proteinType = HKSampleType.quantityType(forIdentifier: .dietaryProtein) else { return }
+        let unit = HKUnit.gram()
+        let quantity = HKQuantity(unit: unit, doubleValue: proteinValue)
+        let today = Date()
+        
+        let proteinQuantitySample = HKQuantitySample(type: proteinType, quantity: quantity, start: today, end: today)
+        healthStore?.save(proteinQuantitySample, withCompletion: { (success, error) in
+            print("Protein data has been saved")
+        })
     }
     
     func getLabelNutriSocre() {
@@ -62,19 +175,14 @@ class DetailFoodVC: UIViewController {
         
         switch nutriScorePoint! {
         case (-15)...(-1):
-            // As "A" label
             nutriScoreLabel.text = "A"
         case 0...2:
-            // As "B" label
             nutriScoreLabel.text = "B"
         case 3...10:
-            // As "C" label
             nutriScoreLabel.text = "C"
         case 11...18:
-            // As "D" label
             nutriScoreLabel.text = "D"
         default:
-            // As "E" label
             nutriScoreLabel.text = "E"
         }
     }
@@ -192,9 +300,7 @@ class DetailFoodVC: UIViewController {
             return 10
         }
     }
-    
-    
-    //==========================
+
     //Nilai Zona Hijau
     func getFruitValue(fruitValue: Int) -> Int {
         switch fruitValue {

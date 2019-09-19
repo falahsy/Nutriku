@@ -42,7 +42,7 @@ class FoodListVC: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func createDataFood(foodName: String, energy: Int, sugar: Int, sfa: Int, sodium: Int, fruit: Int, fiber: Int, protein: Int) {
+    func createDataFood(foodName: String, energy: Int, sugar: Double, sfa: Double, sodium: Int, fruit: Int, fiber: Double, protein: Double) {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         
@@ -105,12 +105,12 @@ class FoodListVC: UITableViewController {
                 if data.value(forKey: "foodName") as! String == foodNameRetrievedTo {
                     let foodName = data.value(forKey: "foodName") as! String
                     let energy = data.value(forKey: "energy") as! Int
-                    let sugar = data.value(forKey: "sugar") as! Int
-                    let sfa = data.value(forKey: "sfa") as! Int
+                    let sugar = data.value(forKey: "sugar") as! Double
+                    let sfa = data.value(forKey: "sfa") as! Double
                     let sodium = data.value(forKey: "sodium") as! Int
                     let fruit = data.value(forKey: "fruit") as! Int
-                    let fiber = data.value(forKey: "fiber") as! Int
-                    let protein = data.value(forKey: "protein") as! Int
+                    let fiber = data.value(forKey: "fiber") as! Double
+                    let protein = data.value(forKey: "protein") as! Double
                     
                     retrievedFood = Food(foodName: foodName, energy: energy, sugar: sugar, sfa: sfa, sodium: sodium, fruitAndVege: fruit, fibers: fiber, proteins: protein)
                 }

@@ -11,10 +11,10 @@ import Foundation
 struct Food {
     var foodName: String
     var energy: Int
-    var sugar: Int
-    var sfa: Int
+    var sugar: Double
+    var sfa: Double
     var sodium: Int
     var fruitAndVege: Int
-    var fibers: Int
-    var proteins: Int
+    var fibers: Double
+    var proteins: Double
 }

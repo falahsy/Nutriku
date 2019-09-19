@@ -20,13 +20,16 @@ class AddNewFoodVC: UIViewController {
     @IBOutlet weak var proteinTextField: UITextField!
     
     var foodName: String!
-    var energy, sugar, sfa, sodium, fruit, fiber, protein: Int!
+    var energy, sodium, fruit: Int!
+    var sugar, sfa, fiber, protein: Double!
     var food: Food!
     
     var flagIsTextFillCompleted: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.hideKeyboardWhenTapArround()
     }
     
     @IBAction func saveFoodToList(_ sender: UIBarButtonItem) {
@@ -50,10 +53,10 @@ class AddNewFoodVC: UIViewController {
             energy = Int(newEnergy)
         }
         if let newSugar = sugarTextField.text  {
-            sugar = Int(newSugar)
+            sugar = Double(newSugar)
         }
         if let newSfa = sfaTextField.text {
-            sfa = Int(newSfa)
+            sfa = Double(newSfa)
         }
         if let newSodium = sodiumTextField.text {
             sodium = Int(newSodium)
@@ -62,11 +65,22 @@ class AddNewFoodVC: UIViewController {
             fruit = Int(newFruit)
         }
         if let newFiber = fiberTextField.text {
-            fiber = Int(newFiber)
+            fiber = Double(newFiber)
         }
         if let newProtein = proteinTextField.text {
-            protein = Int(newProtein)
+            protein = Double(newProtein)
         }
         food = Food(foodName: foodName, energy: energy, sugar: sugar, sfa: sfa, sodium: sodium, fruitAndVege: fruit, fibers: fiber, proteins: protein)
+    }
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTapArround() {
+        let tap: UIGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
     }
 }
