@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddNewFoodVC: UIViewController {
+class AddNewFoodVC: UIViewController, UITextFieldDelegate  {
 
     @IBOutlet weak var foodNameTextField: UITextField!
     @IBOutlet weak var energyTextField: UITextField!
@@ -29,8 +29,33 @@ class AddNewFoodVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        proteinTextField.delegate = self
+        
+        //Listen for keyboard events
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        
         self.hideKeyboardWhenTapArround()
     }
+    
+    deinit {
+        //Stop listening for keyboard event
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    @objc func keyboardWillChange(notification: Notification) {
+//        guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {return}
+        
+        if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification {
+            view.frame.origin.y = -55
+        } else {
+            view.frame.origin.y = 0
+        }
+    }
+    
     
     @IBAction func saveFoodToList(_ sender: UIBarButtonItem) {
         if foodNameTextField.text != "" && energyTextField.text != "" && sugarTextField.text != "" && sfaTextField.text != "" && sodiumTextField.text != "" && fruitTextField.text != "" && fiberTextField.text != "" && proteinTextField.text != "" {
@@ -71,6 +96,11 @@ class AddNewFoodVC: UIViewController {
             protein = Double(newProtein)
         }
         food = Food(foodName: foodName, energy: energy, sugar: sugar, sfa: sfa, sodium: sodium, fruitAndVege: fruit, fibers: fiber, proteins: protein)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

@@ -11,13 +11,34 @@
 		1608D4EE2331C96E0047BFDF /* FoodListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1608D4ED2331C96E0047BFDF /* FoodListVC.swift */; };
 		1608D4F12331C96E0047BFDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1608D4EF2331C96E0047BFDF /* Main.storyboard */; };
 		1608D4F42331C96E0047BFDF /* Nutriku.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1608D4F22331C96E0047BFDF /* Nutriku.xcdatamodeld */; };
-		1608D4F62331C9700047BFDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1608D4F52331C9700047BFDF /* Assets.xcassets */; };
 		1608D4F92331C9700047BFDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1608D4F72331C9700047BFDF /* LaunchScreen.storyboard */; };
 		1658FE8C233243C5006A41F1 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658FE8B233243C5006A41F1 /* Food.swift */; };
 		1658FE8E23324EFE006A41F1 /* AddNewFoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658FE8D23324EFE006A41F1 /* AddNewFoodVC.swift */; };
 		1658FE902332AE3A006A41F1 /* DetailFoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658FE8F2332AE3A006A41F1 /* DetailFoodVC.swift */; };
 		1658FE9423331D1A006A41F1 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1658FE9323331D1A006A41F1 /* HealthKit.framework */; };
+		167ADC8E233460A10009732F /* NutrikuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167ADC8D233460A10009732F /* NutrikuTests.swift */; };
+		167ADC9C233460C50009732F /* NutrikuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167ADC9B233460C50009732F /* NutrikuUITests.swift */; };
+		167ADCA92334631F0009732F /* NutrikuTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167ADCA82334631F0009732F /* NutrikuTest.swift */; };
+		16E5234F23336A0000CF24A3 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E5234E23336A0000CF24A3 /* LoginVC.swift */; };
+		16E523512333770000CF24A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16E523502333770000CF24A3 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		167ADC90233460A10009732F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1608D4E02331C96E0047BFDF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1608D4E72331C96E0047BFDF;
+			remoteInfo = Nutriku;
+		};
+		167ADC9E233460C50009732F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1608D4E02331C96E0047BFDF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1608D4E72331C96E0047BFDF;
+			remoteInfo = Nutriku;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1608D4E82331C96E0047BFDF /* Nutriku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nutriku.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -25,7 +46,6 @@
 		1608D4ED2331C96E0047BFDF /* FoodListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListVC.swift; sourceTree = "<group>"; };
 		1608D4F02331C96E0047BFDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1608D4F32331C96E0047BFDF /* Nutriku.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nutriku.xcdatamodel; sourceTree = "<group>"; };
-		1608D4F52331C9700047BFDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1608D4F82331C9700047BFDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1608D4FA2331C9700047BFDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1658FE8B233243C5006A41F1 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -33,6 +53,15 @@
 		1658FE8F2332AE3A006A41F1 /* DetailFoodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodVC.swift; sourceTree = "<group>"; };
 		1658FE9123331D1A006A41F1 /* Nutriku.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nutriku.entitlements; sourceTree = "<group>"; };
 		1658FE9323331D1A006A41F1 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		167ADC8B233460A10009732F /* NutrikuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NutrikuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		167ADC8D233460A10009732F /* NutrikuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrikuTests.swift; sourceTree = "<group>"; };
+		167ADC8F233460A10009732F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		167ADC99233460C50009732F /* NutrikuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NutrikuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		167ADC9B233460C50009732F /* NutrikuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrikuUITests.swift; sourceTree = "<group>"; };
+		167ADC9D233460C50009732F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		167ADCA82334631F0009732F /* NutrikuTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrikuTest.swift; sourceTree = "<group>"; };
+		16E5234E23336A0000CF24A3 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		16E523502333770000CF24A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +73,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		167ADC88233460A10009732F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		167ADC96233460C50009732F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -51,6 +94,10 @@
 			isa = PBXGroup;
 			children = (
 				1608D4EA2331C96E0047BFDF /* Nutriku */,
+				167ADC81233452E10009732F /* NutrikuTest */,
+				167ADC82233452F60009732F /* NutrikuUiTest */,
+				167ADC8C233460A10009732F /* NutrikuTests */,
+				167ADC9A233460C50009732F /* NutrikuUITests */,
 				1608D4E92331C96E0047BFDF /* Products */,
 				1658FE9223331D1A006A41F1 /* Frameworks */,
 			);
@@ -60,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				1608D4E82331C96E0047BFDF /* Nutriku.app */,
+				167ADC8B233460A10009732F /* NutrikuTests.xctest */,
+				167ADC99233460C50009732F /* NutrikuUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,11 +117,12 @@
 			isa = PBXGroup;
 			children = (
 				1658FE8B233243C5006A41F1 /* Food.swift */,
+				16E5234E23336A0000CF24A3 /* LoginVC.swift */,
 				1608D4ED2331C96E0047BFDF /* FoodListVC.swift */,
 				1658FE8D23324EFE006A41F1 /* AddNewFoodVC.swift */,
 				1658FE8F2332AE3A006A41F1 /* DetailFoodVC.swift */,
 				1608D4EF2331C96E0047BFDF /* Main.storyboard */,
-				1608D4F52331C9700047BFDF /* Assets.xcassets */,
+				16E523502333770000CF24A3 /* Assets.xcassets */,
 				1608D4F72331C9700047BFDF /* LaunchScreen.storyboard */,
 				1608D4EB2331C96E0047BFDF /* AppDelegate.swift */,
 				1608D4FA2331C9700047BFDF /* Info.plist */,
@@ -88,6 +138,39 @@
 				1658FE9323331D1A006A41F1 /* HealthKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		167ADC81233452E10009732F /* NutrikuTest */ = {
+			isa = PBXGroup;
+			children = (
+				167ADCA82334631F0009732F /* NutrikuTest.swift */,
+			);
+			path = NutrikuTest;
+			sourceTree = "<group>";
+		};
+		167ADC82233452F60009732F /* NutrikuUiTest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NutrikuUiTest;
+			sourceTree = "<group>";
+		};
+		167ADC8C233460A10009732F /* NutrikuTests */ = {
+			isa = PBXGroup;
+			children = (
+				167ADC8D233460A10009732F /* NutrikuTests.swift */,
+				167ADC8F233460A10009732F /* Info.plist */,
+			);
+			path = NutrikuTests;
+			sourceTree = "<group>";
+		};
+		167ADC9A233460C50009732F /* NutrikuUITests */ = {
+			isa = PBXGroup;
+			children = (
+				167ADC9B233460C50009732F /* NutrikuUITests.swift */,
+				167ADC9D233460C50009732F /* Info.plist */,
+			);
+			path = NutrikuUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +193,42 @@
 			productReference = 1608D4E82331C96E0047BFDF /* Nutriku.app */;
 			productType = "com.apple.product-type.application";
 		};
+		167ADC8A233460A10009732F /* NutrikuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 167ADC92233460A10009732F /* Build configuration list for PBXNativeTarget "NutrikuTests" */;
+			buildPhases = (
+				167ADC87233460A10009732F /* Sources */,
+				167ADC88233460A10009732F /* Frameworks */,
+				167ADC89233460A10009732F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				167ADC91233460A10009732F /* PBXTargetDependency */,
+			);
+			name = NutrikuTests;
+			productName = NutrikuTests;
+			productReference = 167ADC8B233460A10009732F /* NutrikuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		167ADC98233460C50009732F /* NutrikuUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 167ADCA0233460C50009732F /* Build configuration list for PBXNativeTarget "NutrikuUITests" */;
+			buildPhases = (
+				167ADC95233460C50009732F /* Sources */,
+				167ADC96233460C50009732F /* Frameworks */,
+				167ADC97233460C50009732F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				167ADC9F233460C50009732F /* PBXTargetDependency */,
+			);
+			name = NutrikuUITests;
+			productName = NutrikuUITests;
+			productReference = 167ADC99233460C50009732F /* NutrikuUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -128,6 +247,14 @@
 							};
 						};
 					};
+					167ADC8A233460A10009732F = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 1608D4E72331C96E0047BFDF;
+					};
+					167ADC98233460C50009732F = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 1608D4E72331C96E0047BFDF;
+					};
 				};
 			};
 			buildConfigurationList = 1608D4E32331C96E0047BFDF /* Build configuration list for PBXProject "Nutriku" */;
@@ -144,6 +271,8 @@
 			projectRoot = "";
 			targets = (
 				1608D4E72331C96E0047BFDF /* Nutriku */,
+				167ADC8A233460A10009732F /* NutrikuTests */,
+				167ADC98233460C50009732F /* NutrikuUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -154,8 +283,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				1608D4F92331C9700047BFDF /* LaunchScreen.storyboard in Resources */,
-				1608D4F62331C9700047BFDF /* Assets.xcassets in Resources */,
+				16E523512333770000CF24A3 /* Assets.xcassets in Resources */,
 				1608D4F12331C96E0047BFDF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		167ADC89233460A10009732F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		167ADC97233460C50009732F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +311,7 @@
 			files = (
 				1608D4F42331C96E0047BFDF /* Nutriku.xcdatamodeld in Sources */,
 				1658FE8E23324EFE006A41F1 /* AddNewFoodVC.swift in Sources */,
+				16E5234F23336A0000CF24A3 /* LoginVC.swift in Sources */,
 				1658FE8C233243C5006A41F1 /* Food.swift in Sources */,
 				1608D4EE2331C96E0047BFDF /* FoodListVC.swift in Sources */,
 				1608D4EC2331C96E0047BFDF /* AppDelegate.swift in Sources */,
@@ -175,7 +319,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		167ADC87233460A10009732F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				167ADCA92334631F0009732F /* NutrikuTest.swift in Sources */,
+				167ADC8E233460A10009732F /* NutrikuTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		167ADC95233460C50009732F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				167ADC9C233460C50009732F /* NutrikuUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		167ADC91233460A10009732F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1608D4E72331C96E0047BFDF /* Nutriku */;
+			targetProxy = 167ADC90233460A10009732F /* PBXContainerItemProxy */;
+		};
+		167ADC9F233460C50009732F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1608D4E72331C96E0047BFDF /* Nutriku */;
+			targetProxy = 167ADC9E233460C50009732F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1608D4EF2331C96E0047BFDF /* Main.storyboard */ = {
@@ -351,6 +525,84 @@
 			};
 			name = Release;
 		};
+		167ADC93233460A10009732F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2RW8586XY;
+				INFOPLIST_FILE = NutrikuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.NutrikuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nutriku.app/Nutriku";
+			};
+			name = Debug;
+		};
+		167ADC94233460A10009732F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2RW8586XY;
+				INFOPLIST_FILE = NutrikuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.NutrikuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nutriku.app/Nutriku";
+			};
+			name = Release;
+		};
+		167ADCA1233460C50009732F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2RW8586XY;
+				INFOPLIST_FILE = NutrikuUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.NutrikuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Nutriku;
+			};
+			name = Debug;
+		};
+		167ADCA2233460C50009732F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2RW8586XY;
+				INFOPLIST_FILE = NutrikuUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.NutrikuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Nutriku;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -368,6 +620,24 @@
 			buildConfigurations = (
 				1608D4FE2331C9700047BFDF /* Debug */,
 				1608D4FF2331C9700047BFDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		167ADC92233460A10009732F /* Build configuration list for PBXNativeTarget "NutrikuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				167ADC93233460A10009732F /* Debug */,
+				167ADC94233460A10009732F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		167ADCA0233460C50009732F /* Build configuration list for PBXNativeTarget "NutrikuUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				167ADCA1233460C50009732F /* Debug */,
+				167ADCA2233460C50009732F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

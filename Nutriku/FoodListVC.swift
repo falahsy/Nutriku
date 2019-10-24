@@ -42,6 +42,40 @@ class FoodListVC: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+            let manageContext = appDelegate.persistentContainer.viewContext
+            
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FoodEntity")
+            
+            fetchRequest.predicate = NSPredicate(format: "foodName = %@", listFood[indexPath.row])
+            
+            do {
+                let test = try manageContext.fetch(fetchRequest)
+                
+                let objectToDelete = test[0] as! NSManagedObject
+                manageContext.delete(objectToDelete)
+                
+                do {
+                    try manageContext.save()
+                } catch {
+                    print(error)
+                }
+            } catch {
+                print(error)
+            }
+            
+            listFood.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     func createDataFood(foodName: String, energy: Int, sugar: Double, sfa: Double, sodium: Int, fruit: Int, fiber: Double, protein: Double) {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
@@ -88,6 +122,8 @@ class FoodListVC: UITableViewController {
             print("Failed")
         }
     }
+    
+    
     
     func retrieveDetailDataFood(foodNameRetrievedTo: String) -> Food {
         var retrievedFood: Food!

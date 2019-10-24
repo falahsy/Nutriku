@@ -20,7 +20,9 @@ class DetailFoodVC: UIViewController {
     @IBOutlet weak var fruitLabel: UILabel!
     @IBOutlet weak var fiberLabel: UILabel!
     @IBOutlet weak var proteinLabel: UILabel!
-    @IBOutlet weak var nutriScoreLabel: UILabel!
+    
+    @IBOutlet weak var buttonAddToHealthData: UIButton!
+    @IBOutlet weak var nutriScoreImageView: UIImageView!
     
     var nutriScorePoint: Int!
     var foodName: String!
@@ -32,6 +34,7 @@ class DetailFoodVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        buttonAddToHealthData.layer.cornerRadius = 10
         requestPermitionHealthKit()
     }
     
@@ -175,15 +178,15 @@ class DetailFoodVC: UIViewController {
         
         switch nutriScorePoint! {
         case (-15)...(-1):
-            nutriScoreLabel.text = "A"
+            nutriScoreImageView.image = UIImage(named: "nutriScoreA")
         case 0...2:
-            nutriScoreLabel.text = "B"
+            nutriScoreImageView.image = UIImage(named: "nutriScoreB")
         case 3...10:
-            nutriScoreLabel.text = "C"
+            nutriScoreImageView.image = UIImage(named: "nutriScoreC")
         case 11...18:
-            nutriScoreLabel.text = "D"
+            nutriScoreImageView.image = UIImage(named: "nutriScoreD")
         default:
-            nutriScoreLabel.text = "E"
+            nutriScoreImageView.image = UIImage(named: "nutriScoreE")
         }
     }
     
